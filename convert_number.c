@@ -90,7 +90,7 @@ int print_binary(va_list ap, params_t *params)
  * Return:bytes printed
  */
 
-int prin_octal(va_list ap, params_t *params)
+int print_octal(va_list ap, params_t *params)
 {
 	unsigned long l;
         int c = 0;
