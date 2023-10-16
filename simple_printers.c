@@ -72,7 +72,7 @@ int print_rot13(va_list ap, params_t *params)
 				|| (a[i] >= 'a' && a[i] <= 'z'))
 		{
 			index = a[i] - 65;
-			count += _putcha(arr[index]);
+			count += _putchar(arr[index]);
 		}
 		else
 			count += _putchar(a[i]);

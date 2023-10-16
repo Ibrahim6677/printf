@@ -96,7 +96,7 @@ int get_flag(char *s, params_t *params)
  *
  * Return: if modifier was valid
  */
-int get_modifier(char *s, param_t *params)
+int get_modifier(char *s, params_t *params)
 {
 	int i = 0;
 

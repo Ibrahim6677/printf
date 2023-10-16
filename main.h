@@ -12,10 +12,10 @@
 
 #define NULL_STRING "(null)"
 
-#define PARAMS_INIT (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+#define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 #define CONVERT_LOWERCASE 1
-#define CONVERT_UNSIFNED  2
+#define CONVERT_UNSIGNED  2
 
 /**
 * struct parameters - parameters struct
@@ -43,7 +43,7 @@ typedef struct parameters
 	unsigned int minus_flag		: 1;
 
 	unsigned int width;
-	unsigned int precision;
+	unsigned int percision;
 
 	unsigned int h_modifier		: 1;
 	unsigned int l_modifier		: 1;
@@ -69,11 +69,11 @@ int print_char(va_list ap, params_t *params);
 int print_int(va_list ap, params_t *params);
 int print_string(va_list ap, params_t *params);
 int print_percent(va_list ap, params_t *params);
-int print_s(va_list ap, params_t *params);
+int print_S(va_list ap, params_t *params);
 
 /* number.c */
 char *convert(long int num, int base, int flags, params_t *params);
-int print_unsignrd(va_list ap, params_t *params);
+int print_unsigned(va_list ap, params_t *params);
 int print_address(va_list ap, params_t *params);
 
 /* specifier.c */

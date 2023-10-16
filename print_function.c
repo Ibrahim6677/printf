@@ -53,15 +53,15 @@ int print_string(va_list ap, params_t *params)
 	(void)params;
 	switch ((int)(!str))
 		case 1:
-			str = NULL_SREING;
+			str = NULL_STRING;
 
 	j = pad = _strlen(str);
-	if (params->precision < pad)
-		j = pad = params->precision;
+	if (params->percision < pad)
+		j = pad = params->percision;
 
-	if (params->minus_flage)
+	if (params->minus_flag)
 	{
-		if (params->precision != UINT_MAX)
+		if (params->percision != UINT_MAX)
 			for (i = 0; i < pad; i++)
 				sum += _putchar(*str++);
 		else
@@ -71,7 +71,7 @@ int print_string(va_list ap, params_t *params)
 		sum += _putchar(pad_char);
 	if (!params->minus_flag)
 	{
-		if (params->precision != UNIT_MAX)
+		if (params->percision != UINT_MAX)
 			for (i = 0; i < pad; i++)
 				sum += _putchar(*str++);
 		else

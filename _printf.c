@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	char *p, *start;
 	params_t params = PARAMS_INIT;
 
-	va start(ap, format);
+	va_start(ap, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -37,9 +37,8 @@ int _printf(const char *format, ...)
 		p = get_precision(p, &params, ap);
 		if (get_modifier(p, &params))
 			p++;
-		if (get_specifier(p)
-			sum += print_from_to(start, p,
-				params.l_modifier || params.h_modifier ? p - 1 : 0);
+		if (!get_specifier(p))
+			sum += print_from_to(start, p, params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
 			sum += get_print_func(p, ap, &params);
 	}
