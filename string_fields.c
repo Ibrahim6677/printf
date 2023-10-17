@@ -9,11 +9,11 @@
  * Return: new pointer
  */
 
-char *get_percision(char *p, params_t *params, va_list ap)
+char *get_precision(char *p, params_t *params, va_list ap)
 {
 	int d = 0;
 
-	if (*p == '.')
+	if (*p != '.')
 		return (p);
 	p++;
 	if (*p != '*')

@@ -35,20 +35,26 @@ int _strlen(char *s)
  * Return: chars printed
  */
 
-int print_number(char *str, params_t *parmas)
+int print_number(char *str, params_t *params)
 {
 	unsigned int i = _strlen(str);
 	int neg = (!params->unsign && *str == '-');
 
+<<<<<<< HEAD
+
 	if (!params->percision && *str == '0' && !str[1])
+
+=======
+	if (!params->precision && *str == '0' && !str[1])
+>>>>>>> 7d3781e6a5b4c93a9c8daa79b445149b10c73da7
 		str = "";
 	if (neg)
 	{
 		str++;
 		i--;
 	}
-	if (params->percision != UINT_MAX)
-		while (i++ < params->percision)
+	if (params->precision != UINT_MAX)
+		while (i++ < params->precision)
 			*--str = '0';
 	if (neg)
 		*--str = '-';
@@ -57,6 +63,49 @@ int print_number(char *str, params_t *parmas)
 		return (print_number_right_shift(str, params));
 	else
 		return (print_number_left_shift(str, params));
+}
+
+/**
+ * precision - prints a number with options
+ * @str: the base number as a string
+ * @params: the parameter struct
+ *
+ * Return: chars printed
+ */
+
+int precision(char *str, params_t *params)
+{
+	unsigned int n = 0, neg, neg2, i = _strlen(str);
+	char pad_char = ' ';
+
+	if (params->zero_flag && !params->minus_flag)
+		pad_char = '0';
+	neg = neg2 = (!params->unsign && *str == '-');
+	if (neg && i < params->width && pad_char == '0' && !params->minus_flag)
+		str++;
+	else
+		neg = 0;
+	if ((params->plus_flag && !neg2) ||
+			(!params->plus_flag && params->space_flag && !neg2))
+		i++;
+	if (neg && pad_char == '0')
+		n += _putchar('-');
+	if (params->plus_flag && !neg2 && pad_char == '0' && !params->unsign)
+		n += _putchar('+');
+	else if (!params->plus_flag && params->space_flag && !neg2 &&
+			!params->unsign && params->zero_flag)
+		n += _putchar(' ');
+	while (i++ < params->width)
+		n += _putchar(pad_char);
+	if (neg && pad_char == ' ')
+		n += _putchar('-');
+	if (params->plus_flag && !neg2 && pad_char == ' ' && !params->unsign)
+			n += _putchar('+');
+	else if (!params->plus_flag && params->space_flag && !neg2 &&
+                        !params->unsign && !params->zero_flag)
+		n += _putchar(' ');
+	n += _puts(str);
+	return (n);
 }
 
 /**

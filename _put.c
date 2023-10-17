@@ -1,10 +1,12 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
 * _puts - print a string with newline
 * @str: the string to print
 * Return: void
 */
+
 int _puts(char *str)
 {
 	char *a = str;
@@ -15,11 +17,13 @@ int _puts(char *str)
 }
 
 /**
-* _putchar - writes the character c stdout
-* @c: the character to print
-* Return: on success 1.
-* on error, -1 is returned, and errno is set appropriately.
-*/
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
 int _putchar(int c)
 {
 	static int i;
@@ -27,10 +31,10 @@ int _putchar(int c)
 
 	if (c == BUF_FLUSH || i >= OUTPUT_BUF_SIZE)
 	{
-		write(1, buf, i);
-		i = 0;
+			write(1, buf, i);
+			i = 0;
 	}
 	if (c != BUF_FLUSH)
-		buf[i++] = c;
+			buf[i++] = c;
 	return (1);
 }

@@ -12,7 +12,7 @@
 
 #define NULL_STRING "(null)"
 
-#define PARAMS_INIT (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+#define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 #define CONVERT_LOWERCASE 1
 #define CONVERT_UNSIGNED  2
@@ -27,7 +27,7 @@
 * @minus_flag: on if minus _flag specified
 *
 * @width: field width specified
-* @precision: flied percision specified
+* @precision: flied precision specified
 *
 * @h_modifier: on if h_modifier is specified
 * @l_modifier: on if l_modifier is specified
@@ -69,11 +69,11 @@ int print_char(va_list ap, params_t *params);
 int print_int(va_list ap, params_t *params);
 int print_string(va_list ap, params_t *params);
 int print_percent(va_list ap, params_t *params);
-int print_s(va_list ap, params_t *params);
+int print_S(va_list ap, params_t *params);
 
 /* number.c */
 char *convert(long int num, int base, int flags, params_t *params);
-int print_unsignrd(va_list ap, params_t *params);
+int print_unsigned(va_list ap, params_t *params);
 int print_address(va_list ap, params_t *params);
 
 /* specifier.c */

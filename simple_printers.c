@@ -2,7 +2,7 @@
 
 /**
  * print_from_to - prints a range of char addresses
- * @strat: starting address
+ * @start: starting address
  * @stop: stopping address
  * @except: except address
  *
@@ -33,7 +33,7 @@ int print_from_to(char *start, char *stop, char *except)
 int print_rev(va_list ap, params_t *params)
 {
 	int len, sum = 0;
-	char *str = va_arg(ap,char *);
+	char *str = va_arg(ap, char *);
 	(void)params;
 
 	if (str)
@@ -41,7 +41,7 @@ int print_rev(va_list ap, params_t *params)
 		for (len = 0; *str; str++)
 			len++;
 		str--;
-		for(; len > 0; len--,str--)
+		for (; len > 0; len--, str--)
 			sum += _putchar(*str);
 	}
 	return (sum);
@@ -72,11 +72,11 @@ int print_rot13(va_list ap, params_t *params)
 				|| (a[i] >= 'a' && a[i] <= 'z'))
 		{
 			index = a[i] - 65;
-			count += _putcha(arr[index]);
+			count += _putchar(arr[index]);
 		}
 		else
 			count += _putchar(a[i]);
-		i++;			
+		i++;
 	}
 	return (count);
 }
