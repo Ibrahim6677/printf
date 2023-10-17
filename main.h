@@ -15,7 +15,7 @@
 #define PARAMS_INIT (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 #define CONVERT_LOWERCASE 1
-#define CONVERT_UNSIFNED  2
+#define CONVERT_UNSIGNED  2
 
 /**
 * struct parameters - parameters struct
@@ -43,7 +43,7 @@ typedef struct parameters
 	unsigned int minus_flag		: 1;
 
 	unsigned int width;
-	unsigned int precision;
+	unsigned int percision;
 
 	unsigned int h_modifier		: 1;
 	unsigned int l_modifier		: 1;
@@ -105,7 +105,7 @@ int print_number_left_shift(char *str, params_t *params);
 void init_params(params_t *params, va_list ap);
 
 /* string_fields.c */
-char *get_precision(char *p, params_t *params, va_list ap);
+char *get_percision(char *p, params_t *params, va_list ap);
 
 /* _printf.c */
 int _printf(const char *format, ...);

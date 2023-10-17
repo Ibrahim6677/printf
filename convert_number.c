@@ -77,7 +77,7 @@ int print_binary(va_list ap, params_t *params)
 	int c = 0;
         
         if (params->hashtag_flag && n)
-		*--str = '0';
+			*--str = '0';
         params->unsign = 1;
         return (c += print_number(str, params));
 }
@@ -108,5 +108,5 @@ int prin_octal(va_list ap, params_t *params)
 	if (params->hashtag_flag && l)
                 *--str = '0';
 	params->unsign = 1;
-        return (c += print_number(str, params));
+	return (c += print_number(str, params));
 }

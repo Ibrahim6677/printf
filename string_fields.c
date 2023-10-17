@@ -16,7 +16,7 @@ char *get_percision(char *p, params_t *params, va_list ap)
 	if (*p == '.')
 		return (p);
 	p++;
-	if (*p == '*')
+	if (*p != '*')
 	{
 		d = va_arg(ap, int);
 		p++;

@@ -26,7 +26,7 @@ char *convert(long int num, int base, int flags, params_t *params)
 	}
 	array = flags & CONVERT_LOWERCASE ? "012346789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[49];
-
+	*ptr = '\0';
 	do
 	{
 		*--ptr = array[n % base];
