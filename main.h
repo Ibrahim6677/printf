@@ -27,7 +27,7 @@
 * @minus_flag: on if minus _flag specified
 *
 * @width: field width specified
-* @precision: flied percision specified
+* @precision: flied precision specified
 *
 * @h_modifier: on if h_modifier is specified
 * @l_modifier: on if l_modifier is specified
@@ -43,7 +43,7 @@ typedef struct parameters
 	unsigned int minus_flag		: 1;
 
 	unsigned int width;
-	unsigned int percision;
+	unsigned int precision;
 
 	unsigned int h_modifier		: 1;
 	unsigned int l_modifier		: 1;
@@ -105,7 +105,7 @@ int print_number_left_shift(char *str, params_t *params);
 void init_params(params_t *params, va_list ap);
 
 /* string_fields.c */
-char *get_percision(char *p, params_t *params, va_list ap);
+char *get_precision(char *p, params_t *params, va_list ap);
 
 /* _printf.c */
 int _printf(const char *format, ...);
