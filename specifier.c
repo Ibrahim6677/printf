@@ -131,7 +131,7 @@ char *get_width(char *s, params_t *params, va_list ap)
 	else
 	{
 		while (_isdigit(*s))
-			d= d * 10 + (*s++ - '0');
+			d = d * 10 + (*s++ - '0');
 	}
 	params->width = d;
 	return (s);
