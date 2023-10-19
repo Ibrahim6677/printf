@@ -2,7 +2,7 @@
 
 /**
  * print_from_to - prints a range of char addresses
- * @strat: starting address
+ * @start: starting address
  * @stop: stopping address
  * @except: except address
  *

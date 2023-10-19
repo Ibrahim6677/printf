@@ -117,6 +117,7 @@ int get_modifier(char *s, params_t *params)
  * @s: the format string
  * @params: the parameters struct
  * @ap: argument pointer
+ * Return: string
  */
 
 char *get_width(char *s, params_t *params, va_list ap)
