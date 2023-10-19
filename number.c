@@ -22,14 +22,13 @@ char *convert(long int num, int base, int flags, params_t *params)
 	if (!(flags & CONVERT_UNSIGNED) && num < 0)
 	{
 		n = -num;
-		sign = '-';		
+		sign = '-';
 	}
 	array = flags & CONVERT_LOWERCASE ? "012346789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[49];
-	*ptr='\0';
+	*ptr = '\0';
 
-	do
-	{
+	do {
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
